@@ -31,3 +31,15 @@ Adding Plugins
 ---------------
 
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrp.vim
+
+Updating Plugins
+----------------
+
+```
+git submodule foreach git pull origin master
+```
+
+Troubleshooting
+---------------
+
+As per http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/, if git status reports a dirty submodule tree, add ignore = dirty to that submodule's gitignore.
