@@ -38,6 +38,10 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
+" Add shortcuts to commonly used voOm (outliner view) command
+com! VM Voom markdown
+com! VMT VoomToggle markdown
+
 " Toggle Auto-indenting for pasting of code
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
