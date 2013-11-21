@@ -13,15 +13,16 @@ cd ~/
 git clone https://github.com/organisciak/.vim.git
 ```
 
-Vim settings are kept in ~/.vimrc. To keep everything in the repo, add a symlink to the repo's version of vimrc. This will replace your copy. If you don't want to do so, at the very least have the vimrc lines necessaryfor Pathogen (https://github.com/tpope/vim-pathogen).
+Vim settings are kept in ~/.vimrc. To keep everything in the repo, add a symlink to the repo's version of vimrc. This will replace your copy. If you don't want to do so, at the very least have the vimrc lines necessary for Pathogen (https://github.com/tpope/vim-pathogen).
 
 ```
-ln ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 ```
 
 Finally, install dependencies and initialize the submodules.
 
 ```
+cd .vim
 sudo pip install jedi
 git submodule init
 git submodule update
