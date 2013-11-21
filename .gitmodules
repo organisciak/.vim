@@ -28,3 +28,6 @@
 [submodule "bundle/VOoM"]
 	path = bundle/VOoM
 	url = https://github.com/vim-scripts/VOoM.git
+[submodule "vim-markdown-folding"]
+	path = vim-markdown-folding
+	url = https://github.com/nelstrom/vim-markdown-folding.git

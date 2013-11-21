@@ -1,8 +1,10 @@
-" Use Java highlighting for Processing files
-au BufRead,BufNewFile *.pde     setf java
+" Use Vim settings, rather than Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
 
 " Set leader to ,
 let mapleader=","
+
 
 " Run Vim Pathogen https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
@@ -44,6 +46,9 @@ set showmode
 " Map CtrlPBuffer to the ;
 nmap ; :CtrlPBuffer<CR>
 
+" Use Java highlighting for Processing files
+au BufRead,BufNewFile *.pde     setf java
+
 " An example for a vimrc file.
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
@@ -60,9 +65,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
