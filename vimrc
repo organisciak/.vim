@@ -42,6 +42,11 @@ let g:ctrlp_switch_buffer = 0
 com! VM Voom markdown
 com! VMT VoomToggle markdown
 
+" Some plugins give markdown a mkd filetype, others give it markdown. Apply
+" both.
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} set filetype=markdown.mkd
+
 " Toggle Auto-indenting for pasting of code
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
