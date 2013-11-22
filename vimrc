@@ -9,6 +9,9 @@ let mapleader=","
 " Run Vim Pathogen https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
 
+" For testing, to remove plugins
+" set runtimepath-=~/.vim/bundle/vim-markdown
+
 " Coffee Script Indentation
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab softtabstop=2
 " Coffeescript fold by indent (use 'zi' to fold)
@@ -44,8 +47,11 @@ com! VMT VoomToggle markdown
 
 " Some plugins give markdown a mkd filetype, others give it markdown. Apply
 " both.
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd|setlocal spell
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} set filetype=markdown.mkd
+
+" Turn on spellchecking by default for markdown files
+autocmd FileType markdown setlocal spell
 
 " Toggle Auto-indenting for pasting of code
 nnoremap <F2> :set invpaste paste?<CR>
