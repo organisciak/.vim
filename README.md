@@ -31,7 +31,10 @@ git submodule update
 Adding Plugins
 ---------------
 
+e.g.
+```
 git submodule add https://github.com/kien/ctrlp.vim.git bundle/ctrp.vim
+```
 
 Updating Plugins
 ----------------
