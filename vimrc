@@ -5,12 +5,17 @@ set nocompatible
 " Set leader to ,
 let mapleader=","
 
-
 " Run Vim Pathogen https://github.com/tpope/vim-pathogen
 execute pathogen#infect()
 
 " For testing, to remove plugins
 " set runtimepath-=~/.vim/bundle/vim-markdown
+
+" Run a command in the buffer i.e. if you have a Unix command in a document,
+" you can run with ",x"
+" This is equivalent to yanking with Y, runing a command with :! and using
+" Ctrl+R to paste in what you yanked
+nmap <Leader>x Y:!<C-R>"<C-H><CR>
 
 " Coffee Script Indentation
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab softtabstop=2
