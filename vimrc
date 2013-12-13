@@ -9,7 +9,7 @@ let mapleader=","
 execute pathogen#infect()
 
 " For testing, to remove plugins
-" set runtimepath-=~/.vim/bundle/vim-markdown
+set runtimepath-=~/.vim/bundle/vim-markdown-folding
 
 " Run a command in the buffer i.e. if you have a Unix command in a document,
 " you can run with ",x"
@@ -37,6 +37,11 @@ set laststatus=2
 " Enable filetype plugins (e.g. for NERD Commenter)
 filetype plugin on 
 
+" Turn off foldin from vim-pandoc (slow, and for some reason I can't get
+" markdown folding to work properly anyway)
+let g:pandoc_no_folding = 1
+let g:pandoc_no_empty_implicits = 1
+
 " Preferences for CtrlP
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_match_window_bottom = 0
@@ -52,7 +57,7 @@ com! VMT VoomToggle markdown
 
 " Some plugins give markdown a mkd filetype, others give it markdown. Apply
 " both.
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd|setlocal spell
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd.pandoc|setlocal spell
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} set filetype=markdown.mkd
 
 " Turn on spellchecking by default for markdown files
