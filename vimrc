@@ -39,8 +39,9 @@ filetype plugin on
 
 " Turn off foldin from vim-pandoc (slow, and for some reason I can't get
 " markdown folding to work properly anyway)
-let g:pandoc_no_folding = 1
-let g:pandoc_no_empty_implicits = 1
+" Update -- currently keeping on, remove 'foldmethod=expr' if changing.
+ let g:pandoc_no_folding = 1
+ let g:pandoc_no_empty_implicits = 1
 
 " Preferences for CtrlP
 let g:ctrlp_map = '<Leader>t'
@@ -52,12 +53,12 @@ let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 
 " Add shortcuts to commonly used voOm (outliner view) command
-com! VM Voom markdown
-com! VMT VoomToggle markdown
+com! VM Voom pandoc
+com! VMT VoomToggle pandoc 
 
 " Some plugins give markdown a mkd filetype, others give it markdown. Apply
 " both.
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}   set filetype=markdown.mkd.pandoc|setlocal spell
+au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn,pandoc}   set filetype=markdown.mkd.pandoc|setlocal spell foldmethod=expr foldexpr=pandoc#MarkdownLevel()
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} set filetype=markdown.mkd
 
 " Turn on spellchecking by default for markdown files
