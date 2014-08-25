@@ -9,7 +9,9 @@ let mapleader=","
 execute pathogen#infect()
 
 " For testing, to remove plugins
-set runtimepath-=~/.vim/bundle/vim-markdown-folding
+" set runtimepath-=~/.vim/bundle/vim-markdown-folding
+" UPDATE: TO DISABLE A PATHOGEN PLUGIN, RENAME THE /bundle FOLDER TO END WITH
+" ~
 
 " Run a command in the buffer i.e. if you have a Unix command in a document,
 " you can run with ",x"
