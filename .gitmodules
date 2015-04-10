@@ -34,3 +34,6 @@
 [submodule "bundle/vim-table-mode"]
 	path = bundle/vim-table-mode
 	url = https://github.com/dhruvasagar/vim-table-mode.git
+[submodule "bundle/vim-pandoc-syntax"]
+	path = bundle/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
