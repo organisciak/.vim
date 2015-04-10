@@ -37,7 +37,10 @@ au BufNewFile,BufReadPost *.js setl foldmethod=syntax foldlevelstart=1
 set laststatus=2
 
 " Enable filetype plugins (e.g. for NERD Commenter)
-filetype plugin on 
+filetype plugin on
+
+" Make NERD tree less wide than default 31
+let g:NERDTreeWinSize=25
 
 " Turn off foldin from vim-pandoc (slow, and for some reason I can't get
 " markdown folding to work properly anyway)
