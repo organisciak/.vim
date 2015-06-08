@@ -23,7 +23,7 @@ Finally, install dependencies and initialize the submodules.
 
 ```
 cd .vim
-sudo pip install jedi
+make extras
 git submodule init
 git submodule update
 ```

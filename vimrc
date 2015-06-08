@@ -42,6 +42,16 @@ filetype plugin on
 " Make NERD tree less wide than default 31
 let g:NERDTreeWinSize=25
 
+" Syntastic settings
+let g:syntastic_html_tidy_exec = 'tidy5'
+let g:syntastic_html_tidy_ignore_errors=[
+			\" proprietary attribute \"ng-",
+			\"proprietary attribute \"masonry",
+			\]
+
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_python_checkers = ['flake8']
+ 
 " Turn off foldin from vim-pandoc (slow, and for some reason I can't get
 " markdown folding to work properly anyway)
 " Update -- currently keeping on, remove 'foldmethod=expr' if changing.
