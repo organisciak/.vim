@@ -58,11 +58,15 @@ let g:syntastic_python_checkers = ['flake8']
  let g:pandoc_no_folding = 1
  let g:pandoc_no_empty_implicits = 1
 
+ " For easy Omnicompletion with Ctrl X+O, a place to 
+ " export *all* my zotero references
+let g:pandoc#biblio#bibs = ["/home/Peter/all.bib"]
+
 " Preferences for CtrlP
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_custom_ignore = '\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
+let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|\v\~$|\.(o|swp|pyc|wav|mp3|ogg|blend)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
@@ -73,7 +77,7 @@ com! VMT VoomToggle pandoc
 
 " Some plugins give markdown a mkd filetype, others give it markdown. Apply
 " both.
-au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn,pandoc}   set filetype=markdown.mkd.pandoc|setlocal spell foldmethod=expr foldexpr=pandoc#MarkdownLevel()
+"au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn,pandoc}   set filetype=markdown.mkd.pandoc|setlocal spell foldmethod=expr foldexpr=pandoc#MarkdownLevel() omnifunc=pandoc#completion#Complete
 au BufRead,BufNewFile *.{md,mdown,mkd,mkdn,markdown,mdwn}.{des3,des,bf,bfa,aes,idea,cast,rc2,rc4,rc5,desx} set filetype=markdown.mkd
 
 " Turn on spellchecking by default for markdown files
