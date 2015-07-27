@@ -37,3 +37,9 @@
 [submodule "bundle/vim-pandoc-syntax"]
 	path = bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
+[submodule "goyo.vim"]
+	path = bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "bundle/vim-zenroom2"]
+	path = bundle/vim-zenroom2
+	url = https://github.com/amix/vim-zenroom2.git
