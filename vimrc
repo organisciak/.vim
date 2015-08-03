@@ -60,7 +60,7 @@ let g:syntastic_python_checkers = ['flake8']
 
  " For easy Omnicompletion with Ctrl X+O, a place to 
  " export *all* my zotero references
-let g:pandoc#biblio#bibs = ["/home/Peter/all.bib"]
+let g:pandoc#biblio#bibs = ["/home/Peter/all.bib", "/home/Peter/recent.bib"]
 
 " Preferences for CtrlP
 let g:ctrlp_map = '<Leader>t'
