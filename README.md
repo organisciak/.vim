@@ -43,6 +43,11 @@ Updating Plugins
 git submodule foreach git pull origin master
 ```
 
+Grammar Checker
+----------------
+
+To install the LanguageTool Grammar Checker, download the standalone archive from https://www.languagetool.org and unzip it to ~/.vim/LanguageTool
+
 Troubleshooting
 ---------------
 

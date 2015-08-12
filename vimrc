@@ -51,7 +51,18 @@ let g:syntastic_html_tidy_ignore_errors=[
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['flake8']
+
+" Add a local spellcheck, so you can create a word list just for the project
+" you're in.
+" Add to the global spellcheck with zg or 1zg
+" add to the local spellcheck with 2zg
+set spellfile=~/.vim/spell/en.utf-8.add
+set spellfile+=oneoff.utf-8.add
  
+" Set vim-table-mode defaults to ReST-style, which works well with Pandoc
+let g:table_mode_corner_corner="+"
+let g:table_mode_header_fillchar="="
+
 " Turn off foldin from vim-pandoc (slow, and for some reason I can't get
 " markdown folding to work properly anyway)
 " Update -- currently keeping on, remove 'foldmethod=expr' if changing.
@@ -60,7 +71,15 @@ let g:syntastic_python_checkers = ['flake8']
 
  " For easy Omnicompletion with Ctrl X+O, a place to 
  " export *all* my zotero references
-let g:pandoc#biblio#bibs = ["/home/Peter/all.bib", "/home/Peter/recent.bib"]
+let g:pandoc#biblio#bibs = [$HOME."/all.bib", $HOME."/recent.bib"]
+
+ " LanguageTool location
+let g:languagetool_jar=$HOME.'/.vim/LanguageTool/languagetool-commandline.jar'
+" Map LanguageTool prev/next to ,ln and ,lp
+nmap <Leader>ln :lne<CR>
+nmap <Leader>lp :lp<CR>
+nmap <Leader>lo :LanguageToolCheck<CR>
+nmap <Leader>lx :LanguageToolClear<CR>
 
 " Preferences for CtrlP
 let g:ctrlp_map = '<Leader>t'
